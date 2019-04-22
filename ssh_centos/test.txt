@@ -1,0 +1,8 @@
+docker build -t ssh-centos .
+ docker run -d -P --name test_ssh ssh-centos
+docker port test_ssh 22
+Result: 0.0.0.0 32770
+ifconfig -> VM docker
+ssh user@192.168.99.1 -p 32770
+
+Downloading plugin: github from https://updates.jenkins.io/download/plugins/github/latest/

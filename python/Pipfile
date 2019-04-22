@@ -1,0 +1,21 @@
+[dev-packages]
+
+flake8 = ">=3.3.0,<4"
+pytest = "*"
+mock = "*"
+"delegator.py" = ">=0.0.13"
+sphinx = "<=1.5.5"
+"-e ." = "*"
+toml = "*"
+
+[packages]
+
+pew = ">=0.1.26"
+pep8 = "*"
+pytest = "*"
+pip-tools = "*"
+semver = "*"
+requests = "*"
+
+[requires]
+python_version = "3.6"
