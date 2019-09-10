@@ -3,14 +3,13 @@ version: '3.1'
 services:
   jenkins:
     build: .
-    image: jenkins-dev-ds-infra-042019
     environment:
       JAVA_OPTS: "-Djava.awt.headless=true"
     ports:
       - "50000:50000"
       - "8080:8080"
     volumes:
-      - /var/jenkins_home
+      - ~/jenkins_home:/var/jenkins_home
     networks:
       - evidal
 
