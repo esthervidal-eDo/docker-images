@@ -5,7 +5,7 @@ ARG VERSION_SCALA=2.12.8
 ARG VERSION_PYTHON=3.6.4
 ARG VERSION_MAVEN=3.6.0
 ARG VERSION_JAVA=1.8.0
-ARG VERSION_SPARK=2.3.3
+ARG VERSION_SPARK=2.3.4
 ARG VERSION_SBT=2.3.3
 
 
@@ -25,7 +25,7 @@ RUN yum -y install httpd wget git gcc-c++ gcc glibc glibc-common gd gd-devel tee
 # python
 RUN yum -y install python-setuptools python-devel python36u python36u-libs python36u-devel python36u-pip
 # tools
-RUN yum -y install epel-release iproute at curl crontabs git make
+RUN yum -y install epel-release iproute at curl crontabs git make zip
 
 #sbt
 RUN curl https://bintray.com/sbt/rpm/rpm | tee /etc/yum.repos.d/bintray-sbt-rpm.repo
@@ -44,7 +44,7 @@ RUN wget http://downloads.lightbend.com/scala/${VERSION_SCALA}/scala-${VERSION_S
 RUN yum -y install scala-${VERSION_SCALA}.rpm
 
 #Install maven
-ARG VERSION_MAVEN=3.6.0
+ARG VERSION_MAVEN=3.6.2
 RUN curl -O http://www-eu.apache.org/dist/maven/maven-3/${VERSION_MAVEN}/binaries/apache-maven-${VERSION_MAVEN}-bin.tar.gz
 RUN tar xzf apache-maven-${VERSION_MAVEN}-bin.tar.gz
 RUN mv apache-maven-${VERSION_MAVEN} /opt/maven
